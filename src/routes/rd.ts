@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { getDataRD } from "../controllers/rd";
 
 const router = Router()
 
-router.get('/api', (_req, resp)=>{
-    resp.send({id: "hola"})
-})
+router.get('/api', getDataRD)
 
 export { router };
