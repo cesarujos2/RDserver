@@ -4,7 +4,10 @@
     "director": "",
     "administrado": "",
     "link_rd_c": "",
-    "active_date": "",
+    "active_date": {
+        "active_date_inicial": "",
+        "active_date_final": ""
+    },
     "name": "",
     "tipo_iga_c": ""
 }
