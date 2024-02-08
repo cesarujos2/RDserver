@@ -3,6 +3,6 @@ import { getDataRD } from "../controllers/rd";
 
 const router = Router()
 
-router.get('/api', getDataRD)
+router.post('/api', getDataRD)
 
 export { router };
