@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import { handleHttps } from "../utils/error.handle";
 import { findDataRD } from "../services/rd";
+import { formatterDataTefi } from "../config/tefi";
 
 const getDataRD = async (req: Request, res: Response) => {
     try {
@@ -9,10 +10,12 @@ const getDataRD = async (req: Request, res: Response) => {
             throw new Error("No hay información")
         } else {
             const dataRD = await findDataRD(body, query)
-            res.json(dataRD)
+            const formatedRD = formatterDataTefi(dataRD)
+            res.json(formatedRD)
+            //res.json(dataRD)
         }
     } catch (e) {
-        handleHttps(res, 'ERROR_GET_RD')
+        handleHttps(res, 'ERROR_GET_RD: ' + e)
     }
 };
 
